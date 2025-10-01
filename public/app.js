@@ -71,11 +71,15 @@ function showSongs(album) {
 
 // Play selected song
 function playSong(song) {
+  const player = document.getElementById("player"); 
+  player.style.display = "flex";  // Show player when a song is clicked
+
   audioPlayer.src = song.url;
   audioPlayer.play();
   nowPlaying.innerText = `▶ ${song.name} — ${song.album}`;
   playPauseBtn.textContent = "⏸";
 }
+
 
 // Play/Pause button
 playPauseBtn.onclick = () => {

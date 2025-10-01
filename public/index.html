@@ -67,18 +67,19 @@
 
   <div class="grid" id="grid"></div>
 
-  <div class="player">
-    <div id="nowPlaying">Select a song 🎵</div>
-    <div class="progress-container">
-      <span id="currentTime">0:00</span>
-      <input type="range" id="progress" value="0" min="0" step="1">
-      <span id="duration">0:00</span>
-    </div>
-    <div class="controls">
-      <button id="playPause">⏯</button>
-    </div>
-    <audio id="audioPlayer"></audio>
+<div class="player" id="player" style="display: none;">
+  <div id="nowPlaying">Select a song 🎵</div>
+  <div class="progress-container">
+    <span id="currentTime">0:00</span>
+    <input type="range" id="progress" value="0" min="0" step="1">
+    <span id="duration">0:00</span>
   </div>
+  <div class="controls">
+    <button id="playPause">⏯</button>
+  </div>
+  <audio id="audioPlayer"></audio>
+</div>
+
 
   <script src="app.js"></script>
 </body>
