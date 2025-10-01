@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎶 Vamshi Music Player</title>
+  <link rel="icon" href="favicon.ico">
+  <style>
+    body { margin: 0; font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff; display: flex; flex-direction: column; height: 100vh; }
+    header { text-align: center; padding: 20px; }
+    header h1 { font-size: 2em; margin: 0;
+      background: linear-gradient(to right, #ff0080, #ff8c00, #40e0d0);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    #searchBar, #backBtn { margin: 10px auto; display: none; }
+    #searchBar { padding: 8px 12px; width: 90%; max-width: 500px;
+      border-radius: 8px; border: none; font-size: 1em; }
+    #backBtn { padding: 8px 16px; background: #ff0080; border: none;
+      border-radius: 8px; cursor: pointer; color: #fff; font-weight: bold; }
+    .grid { flex: 1; overflow-y: auto; width: 90%; max-width: 1000px; margin: auto;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px; padding: 20px; justify-items: center; }
+    .card { background: rgba(255,255,255,0.1); border-radius: 15px;
+      width: 220px; height: 280px; display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-start; padding: 12px;
+      text-align: center; transition: transform .3s, background .3s; cursor: pointer; }
+    .card:hover { transform: scale(1.05); background: rgba(255,255,255,0.2); }
+    .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; }
+    .card h3 { margin: 10px 0 0; font-size: 1em; }
+    .player { width: 100%; background: #111; padding: 15px; display: flex;
+      flex-direction: column; align-items: center; justify-content: center;
+      border-top: 2px solid #444; }
+    .progress-container { display: flex; align-items: center; gap: 10px;
+      width: 90%; max-width: 800px; }
+    .progress-container span { font-size: 0.9em; color: #bbb; width: 50px; text-align: center; }
+    #progress { flex: 1; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎶 Vamshi Music Player</h1>
+    <input type="text" id="searchBar" placeholder="🔍 Search albums...">
+    <button id="backBtn">⬅ Back to Albums</button>
+  </header>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="player">
+    <div id="nowPlaying">Select a song 🎵</div>
+    <div class="progress-container">
+      <span id="currentTime">0:00</span>
+      <input type="range" id="progress" value="0" min="0" step="1">
+      <span id="duration">0:00</span>
+    </div>
+    <div class="controls">
+      <button id="playPause">⏯</button>
+    </div>
+    <audio id="audioPlayer"></audio>
+  </div>
+
+  <!-- External script -->
+  <script src="app.js"></script>
+</body>
+</html>
